@@ -33,6 +33,12 @@
         previousPoint = currentPoint;
         
    }    
+    
+    function previousMouseEnter({pageX, pageY}){
+        previousPoint.x = pageX;
+        previousPoint.y = pageY;
+    }
+
     function run(){
     }
     run();
