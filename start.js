@@ -40,6 +40,8 @@
     }
 
     function run(){
+    canvas.addEventListener('mousemove', onMouseMove);
+    canvas.addEventListener('mouseenter', previousMouseEnter);
     }
     run();
 })();
