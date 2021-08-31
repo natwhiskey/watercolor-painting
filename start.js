@@ -8,6 +8,24 @@
     
     let previousPoint = {x: 0, y: 0};
     function onMouseMove({pageX, pageY}){
+        const currentPoint = {x: pageX, y: pageY};
+        
+        context.beginPath();
+        const distance = getDistance(previousPoint, currentPoint);
+        const opacity = Math.min(0.5,1 / distance)
+        context.strokeStyle = `rgba(300, 10, 109, ${opacity})`;
+        
+        context.lineCap = 'round';
+        context.lineJoin = 'round';
+        context.lineWidth = 40;
+        
+        context.moveTo(previousPoint.x, previousPoint.y);
+        context.lineTo(currentPoint.x, currentPoint.y);
+        
+        context.stroke();
+        context.closePath();
+        
+        previousPoint = currentPoint;
         
    }    
     function run(){
